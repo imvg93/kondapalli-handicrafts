@@ -51,6 +51,27 @@ src/
 - **Framer Motion** — scroll-triggered reveals, layout animations, drawer transitions
 - **React Router v7** — client-side routing with scroll reset on navigation
 
+## Deploying to Vercel
+
+This repo is ready to deploy. From the [Vercel dashboard](https://vercel.com/new):
+
+1. **Import Git Repository** → pick `kondapalli-handicrafts`.
+2. Leave all build settings at defaults — Vercel auto-detects Vite:
+   - Build command: `npm run build`
+   - Output directory: `dist`
+   - Install command: `npm install`
+3. Click **Deploy**.
+
+`vercel.json` contains SPA rewrites so React Router routes like `/collection` and `/product/<slug>` work on hard refresh and direct links.
+
+For CLI deploys:
+
+```bash
+npm i -g vercel
+vercel            # preview
+vercel --prod     # production
+```
+
 ## Notes
 
 - Product imagery is currently loaded from external AI reference URLs and placeholder avatars. Swap these in `src/data/products.ts` and page-level image constants when real photography is ready.
